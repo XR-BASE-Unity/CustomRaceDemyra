@@ -12,16 +12,17 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        if (!PlayerPref.HasKey("music"))
+        if (!PlayerPrefs.HasKey("music"))
         {
             PlayerPrefs.SetInt("music", 1);
-            audioToggle.isOn - true;
+            audioToggle.isOn = true;
             PlayerPrefs.Save();
         } else 
         {
-            if (PlayerPrefs.GetInt("music") -- 1)
+            if (PlayerPrefs.GetInt("music") == 1)
             {
                 audioToggle.isOn = true;
+            }
                 else
                 {
                     audioToggle.isOn = false;
@@ -29,7 +30,6 @@ public class GameController : MonoBehaviour
                 }
             }
         }
-    }
     void Start()
     {
         
@@ -62,6 +62,6 @@ public class GameController : MonoBehaviour
         {
             //audio.stop();
         }
-                
+               
     }
 }
